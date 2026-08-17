@@ -1,0 +1,257 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Layout ===== */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    color: #e8e8e8;
+    padding: 28px 0;
+    flex-shrink: 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0 24px 28px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 4px 12px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 13px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.sidebar li:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar li.active {
+    background: linear-gradient(135deg, #0f3460, #533483);
+}
+
+.sidebar li.active a {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ===== Main Content ===== */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+    background: #fff;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.profile {
+    background: #f0f2f5;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* ===== Cards ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 28px 32px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+/* Colored accents for cards */
+.card:nth-child(1) {
+    border-top: 4px solid #0f3460;
+}
+
+.card:nth-child(2) {
+    border-top: 4px solid #533483;
+}
+
+.card:nth-child(3) {
+    border-top: 4px solid #e94560;
+}
+
+.card:nth-child(4) {
+    border-top: 4px solid #16c79a;
+}
+
+/* ===== Table Section ===== */
+.table-section {
+    margin: 8px 32px 32px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.table-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+td {
+    padding: 16px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0f2f5;
+    color: #333;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #fafbfc;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    .sidebar h2 {
+        padding: 0 20px 16px;
+        margin-bottom: 12px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        overflow-x: auto;
+        padding: 0 12px;
+        gap: 4px;
+    }
+
+    .sidebar li {
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .topbar {
+        padding: 14px 20px;
+    }
+
+    .cards {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .table-section {
+        margin: 0 20px 20px;
+        padding: 20px;
+        overflow-x: auto;
+    }
+}
